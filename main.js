@@ -126,3 +126,20 @@ setInterval(function () {
 moveSlide(1);
 }, 5000);
 });
+
+// loader
+setTimeout(() => {
+    document.querySelector(".loader-container").style.display = "none";
+  }, 3000);
+  
+  // loader gsap
+  gsap.to('.box', {
+    yoyo: true,
+    repeat: -1,
+    duration: 1,
+    stagger: 0.2,
+    scale: 0.7,
+    ease: 'power2.inOut'
+  });
+  
+ 
