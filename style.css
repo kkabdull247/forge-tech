@@ -366,6 +366,57 @@ margin-top: 10px;
         }
       }
 
+ /* Hero Section whatsapp logo*/
+  
+  
+      .whatsapp-logo {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        gap: 2px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: fit-content;
+        height: 45px;
+        bottom: 20px;
+        right: 20px;
+       
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transform: translateX(100%);
+        animation: showWhatsApp 5s ease-in-out forwards;
+      }
+  
+      .whatsapp-logo i {
+        color: white;
+        font-size: 30px;
+        border-radius: 50%;
+        padding: 10px;
+        background-color: #66faf062;
+        font-size: 20px;
+        text-decoration: none; /* Remove text decoration */
+        transition: transform 0.3s, background-color 0.3s;
+      }
+
+      .whatsapp-logo i:hover {
+        transform: scale(1.1);
+        color: #66faf0 ;
+        background-color: #ffffff; /* Change to any color you prefer */
+      }
+  
+  
+      /* Animation to make the logo slide in */
+      @keyframes showWhatsApp {
+        0% {
+          opacity: 0;
+          transform: translateX(100%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
 
 /* Sections Styling */
 .about-section,
