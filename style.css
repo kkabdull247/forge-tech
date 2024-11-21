@@ -20,6 +20,17 @@ body {
 
 }
 
+/* Apply scrollbar styling to the main container or the entire page */
+body::-webkit-scrollbar {
+    width: 5px;
+    background-color: #111212 ;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+    background: #66faf0;
+    border-radius: 10px;
+}
 /* Header Styles */
 .header {
     display: flex;
@@ -384,7 +395,7 @@ margin-top: 10px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         opacity: 0;
         transform: translateX(100%);
-        animation: showWhatsApp 5s ease-in-out forwards;
+        animation: showWhatsApp 1.2s ease-in-out forwards;
       }
   
       .whatsapp-logo i {
@@ -426,13 +437,136 @@ margin-top: 10px;
     padding: 60px 0;
     text-align: center;
 }
+ 
 
-.about-section {
-    /* background-color: #000000; */
-    color: rgb(255, 255, 255);
+/* About Section */
+
+.containerr {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Section Title */
+  .section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+    font-weight: bold;
+  }
+
+  .about-section {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
     opacity: 0;
     transform: translateY(50px);
-}
+  }
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Intro */
+  .intro p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  /* Mission, Vision, and Values */
+  .values-mission-vision {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .value {
+    flex: 1 1 calc(33.333% - 20px); /* Three cards per row with space in between */
+    padding: 20px;
+    background-color: #111212;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-height: 250px;
+    
+
+  }
+
+  .value h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .value p {
+    color: #ffffff;
+    font-size: 1rem;
+  }
+
+  /* Team Section */
+  .team-section {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .team-section h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+
+  .team-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .team-card {
+    background-color: #111212;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+  }
+
+  .team-card img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+
+  .team-card h4 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 5px;
+  }
+
+  .team-card p {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .values-mission-vision {
+      flex-direction: column;
+    }
+  }
+
+  
 
 
 
