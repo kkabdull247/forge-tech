@@ -307,7 +307,7 @@ margin-top: 10px;
         animation: slideInFromLeft 1s forwards ease-in-out; /* Animation for slide-in */
       }
   
-      /* Individual icon styling */
+          /* Individual icon styling */
       .social-icons a {
         display: flex;
         align-items: center;
@@ -315,8 +315,8 @@ margin-top: 10px;
         width: 45px;
         height: 45px;
         border-radius: 50%;
-        background-color: #333;
-        color: #66faf0;
+        background-color: #66faf062;
+        color: #fff;
         font-size: 20px;
         text-decoration: none; /* Remove text decoration */
         transition: transform 0.3s, background-color 0.3s;
@@ -324,10 +324,9 @@ margin-top: 10px;
   
       .social-icons a:hover {
         transform: scale(1.1);
-        color: #fff ;
-        background-color: #555; /* Change to any color you prefer */
+        color: #66faf0 ;
+        background-color: #ffffff; /* Change to any color you prefer */
       }
-  
       /* Slide-in animation */
       @keyframes slideInFromLeft {
         0% {
