@@ -188,7 +188,7 @@ margin-top: 10px;
 /* Laptop Image */
 .laptop-img {
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 /* Screen Container */
@@ -210,8 +210,8 @@ margin-top: 10px;
 .screen img {
     position: absolute;
     width: 100%;
-    height: auto;
-    object-fit: cover;
+    height: 100%;
+    object-fit: fill;
     opacity: 0;
     animation: fadeInOut 10s infinite;
 }
@@ -242,10 +242,8 @@ margin-top: 10px;
 /* Screen images animation setup */
 .screen img {
     position: absolute;
-    width: 100%;
-    height: auto;
     opacity: 0;
-    object-fit: cover;
+    object-fit: fill;
     animation: fadeInOut 15s infinite; /* Total cycle time: 15 seconds */
 }
 
