@@ -178,6 +178,28 @@ margin-top: 10px;
 
 }
 
+/* Full-Width Video Background */
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.overlayy {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity for darker/lighter overlay */
+    z-index: 0;
+}
+
+
 /* Laptop Container */
 .laptop-container {
     position: relative;
