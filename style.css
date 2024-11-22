@@ -1131,8 +1131,19 @@ footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 20px 20;
+    margin-top: 50px;
 }
+
+.social-iconss i{
+        
+        color: #fff;
+        
+        font-size: 20px;
+        text-decoration: none; /* Remove text decoration */
+        transition: transform 0.3s, background-color 0.3s;
+
+      }
 
 footer p {
     font-size: 1rem;
