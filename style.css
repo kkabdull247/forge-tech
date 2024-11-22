@@ -189,6 +189,24 @@ margin-top: 10px;
 
 }
 
+/* 2. Typing Text Animation */
+ @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  .typing-text {
+    font-size: 2em;
+    font-weight: bold;
+    font-family: 'Segoe UI' ;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid rgba(54, 221, 221, 0.329);
+    width: 0;
+    animation: typing 2s steps(30, end) 4s forwards;
+
+  }
+
+
 /* Full-Width Video Background */
 .hero-video {
     position: absolute;
@@ -315,7 +333,7 @@ margin-top: 10px;
         display: flex;
         flex-direction: column;
         gap: 15px;
-        animation: slideInFromLeft 1s forwards ease-in-out; /* Animation for slide-in */
+        animation: slideInFromLeft 1s forwards ease-in-out 3.5s; /* Animation for slide-in */
       }
   
           /* Individual icon styling */
@@ -395,7 +413,7 @@ margin-top: 10px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         opacity: 0;
         transform: translateX(100%);
-        animation: showWhatsApp 0s ease-in-out forwards;
+        animation: showWhatsApp 2s ease-in-out forwards 3.5s;
       }
   
       .whatsapp-logo i {
