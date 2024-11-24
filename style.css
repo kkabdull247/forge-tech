@@ -234,12 +234,59 @@ margin-top: 10px;
     position: relative;
     width: 500px;
     max-width: 100%;
+    margin: 50px auto;
+    display: inline-block;
+  }
+  
+  /* Laptop Image */
+  .laptop-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Tooltip styles */
+  .tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 10px; /* Positioned at the bottom of the laptop */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color:#66faf07c;
+    color: #ffffff;
+    /* font-weight: bold !important; */
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+    white-space: nowrap;
+  }
+  
+  /* Show the tooltip when hovering over the laptop container */
+  .laptop-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+/* Laptop Image */
+.laptop-img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Laptop Container */
+.laptop-container {
+    position: relative;
+    width: 500px;
+    max-width: 100%;
+    margin: 0 auto; /* Centering the laptop */
 }
 
 /* Laptop Image */
 .laptop-img {
     width: 100%;
     height: 100%;
+    display: block;
 }
 
 /* Screen Container */
@@ -255,51 +302,54 @@ margin-top: 10px;
     align-items: center;
     justify-content: center;
     background-color: #000;
+    padding: 0; /* Ensure no additional space is added */
+}
+
+/* Link Styling */
+.screen a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: fadeInOut 30s infinite; /* Total cycle time: 30 seconds */
+    display: block; /* Ensures the anchor tag occupies the area correctly */
+    pointer-events: none; /* Disables click events initially */
 }
 
 /* Screen Images */
 .screen img {
-    position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: fill;
-    opacity: 0;
-    animation: fadeInOut 10s infinite;
+    object-fit: cover; /* Ensures the image fits properly without distortion */
 }
 
-/* Individual Images */
-.screen img:nth-child(1) {
-    animation-delay: 0s; /* First image starts immediately */
-}
-
-.screen img:nth-child(2) {
-    animation-delay: 5s; /* Second image starts after the first finishes */
-}
-
-.screen img:nth-child(3) {
-    animation-delay: 10s; /* Third image starts after the second finishes */
-}
-
-/* Keyframes */
+/* Keyframes for fade in and out animation */
 @keyframes fadeInOut {
-    0%, 33.33% {
-        opacity: 1; /* Fully visible for the first 33.33% of the cycle */
+    0%, 10% {
+        opacity: 1; /* Fully visible for the first 10% of the cycle */
+        pointer-events: auto; /* Enable click during this phase */
     }
-    33.34%, 100% {
+    10.01%, 100% {
         opacity: 0; /* Fades out and stays hidden for the rest of the cycle */
+        pointer-events: none; /* Disable click when not visible */
     }
 }
 
-/* Screen images animation setup */
-.screen img {
-    position: absolute;
-    opacity: 0;
-    object-fit: fill;
-    animation: fadeInOut 15s infinite; /* Total cycle time: 15 seconds */
-}
+/* Individual Links with delay for animation */
+.screen a:nth-child(1) { animation-delay: 0s; }
+.screen a:nth-child(2) { animation-delay: 3s; }
+.screen a:nth-child(3) { animation-delay: 6s; }
+.screen a:nth-child(4) { animation-delay: 9s; }
+.screen a:nth-child(5) { animation-delay: 12s; }
+.screen a:nth-child(6) { animation-delay: 15s; }
+.screen a:nth-child(7) { animation-delay: 18s; }
+.screen a:nth-child(8) { animation-delay: 21s; }
+.screen a:nth-child(9) { animation-delay: 24s; }
+.screen a:nth-child(10) { animation-delay: 27s; }
 
 
-/* Responsiveness */
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .laptop-container {
         width: 90%;
@@ -311,8 +361,6 @@ margin-top: 10px;
         width: 80%;
         height: 84%;
     }
-
-    
 }
 
 @media (max-width: 480px) {
@@ -324,6 +372,8 @@ margin-top: 10px;
         font-size: 0.9rem;
     }
 }
+
+
 
        /* Social Media Icons Container */
        .social-icons {
