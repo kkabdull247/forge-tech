@@ -75,7 +75,7 @@ carousel.addEventListener('mousemove', (e) => {
     // Toggle dark mode
     $('.dark-mode-toggle').click(function () {
         $('body').toggleClass('dark-mode');
-        $(this).text($('body').hasClass('dark-mode') ? '🌙' : '🌞');
+        $(this).text($('body').hasClass('dark-mode') ? 'ִֶָ࣪☾' : '☼');
     });
 });
 
