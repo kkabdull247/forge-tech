@@ -80,20 +80,22 @@ carousel.addEventListener('mousemove', (e) => {
 });
 
 $(document).ready(function () {
-    // Show scroll-up button after scrolling down 200px
+  
+  // Show scroll-up button after scrolling down 200px
     $(window).scroll(function () {
         if ($(this).scrollTop() > 200) {
             $('.scroll-up').fadeIn();  // Fade in the button when scrolled down
         } else {
             $('.scroll-up').fadeOut(); // Fade out the button when at the top
         }
-    });
+    }); });
 
     // Scroll to the top when the button is clicked
     $('.scroll-up').click(function () {
         $('html, body').animate({ scrollTop: 0 }, 300);  // Instant smooth scroll
     });
-});
+
+
 
 $(document).ready(function () {
 let slideIndex = 0;
