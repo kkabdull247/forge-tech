@@ -1233,6 +1233,8 @@ button:hover {
     /* font-size: 24px; */
     margin: 0%;
     font-weight: bold;
+    z-index: 50;
+
 }
 
 .scroll-up:hover {
