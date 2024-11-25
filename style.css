@@ -767,6 +767,66 @@ border-radius: 10px;
     transform: translateY(50px);
 }
 
+
+.carousel-containerr {
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+    width: 100%;
+    max-width: 1200px;
+    height: 500px;
+    overflow: hidden;
+    cursor: grab;
+    margin: auto; /* Centers the container itself horizontally */
+}
+
+.carousel-wrapper {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item p{
+    background-color: #111212;
+    color: white;
+    margin-left: 30%;
+    width: 550px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media (max-width: 770px) {
+
+    .carousel-item p{
+     
+        margin-left: 9.5%;
+        width: 300px;
+    }
+
+    .carousel-control-next,.carousel-control-prev {
+        top: 70% !important;
+        height: fit-content;
+        padding: 5px;
+    }
+      
+
+}
+@media (max-width: 350px) {
+
+    .carousel-item p{
+     
+        margin-left: 2%;
+        width: 300px;
+    }
+
+    
+
+}
+
 /* pricing section */
 
 .pricing-section {
@@ -778,34 +838,6 @@ border-radius: 10px;
     position: relative;
     height: 100%;
 }
-
-
-
-.carousel-containerr {
-    display: flex;
-    width: 100%;
-    max-width: 1200px;
-    height: 500px;
-    /* margin: auto; */
-    overflow: hidden;
-    cursor: grab;
-}
-
-.carousel-wrapper {
-    display: flex;
-    transition: transform 0.3s ease-in-out;
-}
-
-.carousel-item p{
-    background-color:#111212;
-    color: white;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
 
 .pricing-row .col {
     display: flex;
