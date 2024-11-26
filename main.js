@@ -144,4 +144,98 @@ setTimeout(() => {
     ease: 'power2.inOut'
   });
   
- 
+ //   mouse follower
+
+ // Select the elements
+const outerCircle = document.querySelector(".outer-circle");
+const innerDot = document.querySelector(".inner-dot");
+const message = document.querySelector(".message");
+
+// Initialize mouse and element positions
+let mouseX = 0, mouseY = 0; // Mouse coordinates
+let outerX = 0, outerY = 0; // Outer circle coordinates
+let innerX = 0, innerY = 0; // Inner dot coordinates
+
+// Set speed for each element (lower values create a slower follow effect)
+const outerSpeed = 10; // Speed for the outer circle
+const innerSpeed = 20; // Speed for the inner dot
+
+// Track mouse position
+document.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+// Function for smooth following effect with boundary constraints
+function animate() {
+  // Get the viewport width and height
+  const viewportWidth = window.innerWidth;
+  const viewportHeight = window.innerHeight;
+
+  // Update outer circle position with constraints to stay within viewport
+  outerX += (mouseX - outerX) / outerSpeed;
+  outerY += (mouseY - outerY) / outerSpeed;
+
+  // Ensure the outer circle stays within the bounds of the viewport
+  outerX = Math.max(Math.min(outerX, viewportWidth - outerCircle.offsetWidth / 2), outerCircle.offsetWidth / 2);
+  outerY = Math.max(Math.min(outerY, viewportHeight - outerCircle.offsetHeight / 2), outerCircle.offsetHeight / 2);
+
+  // Update inner dot position with constraints
+  innerX += (mouseX - innerX) / innerSpeed;
+  innerY += (mouseY - innerY) / innerSpeed;
+
+  // Ensure the inner dot stays within the bounds of the viewport
+  innerX = Math.max(Math.min(innerX, viewportWidth - innerDot.offsetWidth / 2), innerDot.offsetWidth / 2);
+  innerY = Math.max(Math.min(innerY, viewportHeight - innerDot.offsetHeight / 2), innerDot.offsetHeight / 2);
+
+  // Apply transformations to elements
+  outerCircle.style.left = `${outerX - outerCircle.offsetWidth / 2}px`;
+  outerCircle.style.top = `${outerY - outerCircle.offsetHeight / 2}px`;
+
+  innerDot.style.left = `${innerX - innerDot.offsetWidth / 2}px`;
+  innerDot.style.top = `${innerY - innerDot.offsetHeight / 2}px`;
+
+  // Repeat animation
+  requestAnimationFrame(animate);
+}
+
+// Start animation
+animate();
+
+// Handle mouse hover on <a> and <button> elements
+const hoverElements = document.querySelectorAll('a, button'); // Select all anchor and button elements
+
+hoverElements.forEach(element => {
+  element.addEventListener('mouseenter', () => {
+    // Increase size and change color of the outer circle when hovering over an element
+    outerCircle.style.backgroundColor = '#66faf0a6';  // Change to desired color
+    outerCircle.style.width = '80px';  // Increase size
+    outerCircle.style.height = '80px';  // Increase size
+    // Show the message when hovering, hide the dot
+    message.classList.add('visible');
+    innerDot.style.display = 'none';  // Hide the dot during hover
+  });
+
+  element.addEventListener('mouseleave', () => {
+    // Reset size and color when the mouse leaves the element
+    outerCircle.style.backgroundColor = '';  // Reset to original color
+    outerCircle.style.width = '30px';  // Reset to original size
+    outerCircle.style.height = '30px';  // Reset to original size
+    // Hide the message and show the dot again
+    message.classList.remove('visible');
+    innerDot.style.display = 'block';  // Show the dot again
+  });
+});
+
+// Handle click on the outer circle
+outerCircle.addEventListener('click', () => {
+  // Show the "Click Me!" message inside the circle
+  message.textContent = 'Click Me!';
+  message.classList.add('visible');
+});
+
+
+
+
+
+
