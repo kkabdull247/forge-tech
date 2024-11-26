@@ -87,19 +87,17 @@ margin-top: 10px;
     position: fixed;
     top: 0;
     left: -100%;
-    height: 150vh;
-    width: 55%;
-    transition: left 0.4s ease;
+    height: 100%;
+    width: 60%;
+    transition: left 0.5s ease, background-color 0.5s ease;
     padding-top: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: 10;
+    z-index: 500;
     overflow: hidden;
+    background-color: #000000; /* Gray-blue background */
     color: #ffffff;
-    background-color: #111212;
-    z-index: 444 !important;
-
 }
 
 .nav-menu ul {
@@ -111,12 +109,40 @@ margin-top: 10px;
 
 .nav-menu li {
     margin: 20px 0;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+    animation-delay: calc(0.2s * var(--i)); /* Delay each item */
 }
 
 .nav-menu a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #66faf0; /* Pinkish color on hover */
+    transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #66faf0; /* Pinkish underline */
+    transition: width 0.8s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
 }
 
 /* Close Button */
@@ -124,10 +150,14 @@ margin-top: 10px;
     position: absolute;
     top: 15px;
     right: 15px;
-    font-size: 2rem;
+    font-size: 3rem;
     color: #66faf0;
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
 
+.close-menu:hover {
+    transform: rotate(90deg); /* Rotation effect on hover */
 }
 
 /* Overlay for menu */
@@ -140,9 +170,34 @@ margin-top: 10px;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 5;
-
+    transition: opacity 0.3s ease;
 }
 
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Keyframes for the menu items fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Opening and closing the nav menu */
+.nav-menu.open {
+    left: 0; /* Move the menu into view */
+}
+
+.overlay.active {
+    display: block;
+}
 /* Dark Mode */
 .dark-mode {
     background-image: linear-gradient(90deg,#66faf0,black);
