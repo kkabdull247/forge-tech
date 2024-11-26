@@ -452,6 +452,7 @@ border-radius: 10px;
         left: -60px; /* Start off the screen to the left */
         display: flex;
         flex-direction: column;
+        z-index: 400;   
         gap: 15px;
         animation: slideInFromLeft 1s forwards ease-in-out 3.5s; /* Animation for slide-in */
       }
