@@ -697,6 +697,142 @@ border-radius: 10px;
     color: #555;
   }
 
+/* Fade-in Animation */
+.about-section {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Keyframes for Fade-in Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover Effect for Value Cards */
+.value:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect for Team Cards */
+.team-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Darker Text Color on Hover for Team Card Titles */
+.team-card h4:hover {
+  color: #ffffff;
+}
+
+/* Subtle Hover Effects for Images */
+.team-card img:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Unique Fade-In with Bounce for About Section */
+.about-section {
+    animation: bounceInUp 1s ease-out forwards 4s;
+  }
+  
+  @keyframes bounceInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(-10px);
+    }
+    80% {
+      transform: translateY(5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  /* Value Card Hover with Rotation and Shadow Pulse */
+  .value {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  .value:hover:nth-child(1) {
+    transform: scale(1.07) rotate(-3deg);
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2);
+    background-color: #222324;
+  }
+  .value:hover:nth-child(2) {
+    transform: scale(1.07);
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2);
+    background-color: #222324;
+  }
+  .value:hover:nth-child(3) {
+    transform: scale(1.07) rotate(3deg);
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2);
+    background-color: #222324;
+  }
+  /* Team Card Hover with Color Shift and Border Glow */
+  .team-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent;
+  }
+  .team-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2);
+    border: 2px solid #ffffff;
+  }
+  
+  /* Team Card Title Color Glow on Hover */
+  .team-card h4 {
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  .team-card:hover h4 {
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  }
+  
+  /* Profile Image Hover Effect with Spin and Zoom */
+  .team-card img {
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+  }
+  .team-card img:hover {
+    transform: scale(1.15) rotate(15deg);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Fade and Slide-in for Values Section */
+  .values-mission-vision {
+    opacity: 0;
+    animation: fadeInSlide 1.5s ease-out forwards;
+  }
+  
+  @keyframes fadeInSlide {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Subtle Glow on Value Cards */
+  .value:hover h3 {
+    color: #e3e3e3;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  }
+  
   /* Responsive Design */
   @media (max-width: 768px) {
     .values-mission-vision {
