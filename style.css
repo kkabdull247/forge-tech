@@ -1326,5 +1326,84 @@ button:hover {
     }
   
   
+  /* mouse follower */
+
+  /* Outer circle styling */
+
+  html,body{
+    height: 100%;
+  }
+ 
   
+ 
+  .outer-circle {
+    width: 30px;
+    height: 30px;
+    background-color: #66faf063;
+    /* background-image: linear-gradient(90deg,white,#66faf0,white); */
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    transition: width 0.3s, height 0.3s, background-color 0.3s; /* Smooth transition */
+    z-index: 999;
+  }
+  
+  /* Inner dot styling */
+  .inner-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #66faf0;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    z-index: 999;
+  }
+  
+  .message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 13px;
+    color: #ffffff;
+    text-shadow:
+    1px 1px 0px rgba(0, 0, 0, 0.596),   /* Horizontal, vertical, and blur radius for stroke effect */
+    -1px -1px 0px rgba(0, 0, 0, 0.616), 
+    1px -1px 0px rgba(0, 0, 0, 0.623), 
+    -1px 1px 0px rgba(0, 0, 0, 0.61);  /* Additional shadows for more pronounced stroke */
+    font-weight: bold;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  
+
+  .visible {
+    opacity: 1;
+  }
+
+
+  @media (max-width: 768px) 
+  {
+
+    .outer-circle {
+      display: none;
+      }
+      
+      /* Inner dot styling */
+      .inner-dot {
+        display: none !important;
+      }
+      
+      .message {
+        display: none;
+      }
+
+
+  }
+
 
