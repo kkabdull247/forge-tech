@@ -61,22 +61,15 @@ filterButtons.forEach(button => {
     });
 });
 
-$(document).ready(function () {
-  
-  // Show scroll-up button after scrolling down 200px
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 200) {
-            $('.scroll-up').fadeIn();  // Fade in the button when scrolled down
-        } else {
-            $('.scroll-up').fadeOut(); // Fade out the button when at the top
-        }
-    }); });
-
-    // Scroll to the top when the button is clicked
-    $('.scroll-up').click(function () {
-        $('html, body').animate({ scrollTop: 0 }, 300);  // Instant smooth scroll
-    });
-
+  // Add 'scrolled' class to body after scrolling past the hero section
+        window.addEventListener('scroll', () => {
+            const heroHeight = document.getElementById('hero').offsetHeight;
+            if (window.scrollY > heroHeight) {
+                document.body.classList.add('scrolled');
+            } else {
+                document.body.classList.remove('scrolled');
+            }
+        });
 
 
 $(document).ready(function () {
