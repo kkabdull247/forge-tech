@@ -256,95 +256,167 @@
 
     <!-- pricing section -->
 
-    <section class="pricing-section" id="pricing">
+    <section class="pricing-sectionn" id="pricing">
         <h2 class="section-title">Our Packages</h2>
-        <div class="carousel-containerr">
-            <div class="carousel-wrapper">
-                <!-- Pricing Cards -->
-                <div class="pricing-card">
-                    <div class="price">$19/month</div>
-
-                    <h3>Basic Plan</h3>
-                    <p class="description">Essential tools for small teams to get started.</p>
-                    <ul>
-                        <li>5 Projects</li>
-                        <li>Basic Support</li>
-                        <li>10 GB Storage</li>
-                        <li>Community Access</li>
-                    </ul>
-                    <button onclick="alert('Basic Plan Selected')">Select Plan</button>
-                </div>
-                <div class="pricing-card">
-                    <div class="price">$49/month</div>
-
-                    <h3>Pro Plan</h3>
-                    <p class="description">Advanced features for growing businesses.</p>
-                    <ul>
-                        <li>Unlimited Projects</li>
-                        <li>Priority Support</li>
-                        <li>50 GB Storage</li>
-                        <li>Advanced Analytics</li>
-                    </ul>
-                    <button onclick="alert('Pro Plan Selected')">Select Plan</button>
-                </div>
-                <div class="pricing-card">
-                    <div class="price">$99/month</div>
-
-                    <h3>Enterprise Plan</h3>
-                    <p class="description">All the tools you need for large organizations.</p>
-                    <ul>
-                        <li>Unlimited Projects</li>
-                        <li>Dedicated Support</li>
-                        <li>200 GB Storage</li>
-                        <li>Custom Analytics</li>
-                    </ul>
-                    <button onclick="alert('Enterprise Plan Selected')">Select Plan</button>
-                </div>
-                <div class="pricing-card">
-                    <div class="price">$29/month</div>
-
-                    <h3>Startup Plan</h3>
-                    <p class="description">For new businesses and startups looking to grow.</p>
-                    <ul>
-                        <li>15 Projects</li>
-                        <li>Email Support</li>
-                        <li>20 GB Storage</li>
-                        <li>Community Access</li>
-                    </ul>
-                    <button onclick="alert('Startup Plan Selected')">Select Plan</button>
-                </div>
-                <div class="pricing-card">
-                    <div class="price">$59/month</div>
-
-                    <h3>Growth Plan</h3>
-                    <p class="description">Perfect for scaling up your business smoothly.</p>
-                    <ul>
-                        <li>30 Projects</li>
-                        <li>Priority Email Support</li>
-                        <li>100 GB Storage</li>
-                        <li>Advanced Analytics</li>
-                    </ul>
-                    <button onclick="alert('Growth Plan Selected')">Select Plan</button>
-                </div>
-                <div class="pricing-card">
-                    <div class="price">$149/month</div>
-
-                    <h3>Ultimate Plan</h3>
-                    <p class="description">Complete solution with all premium features.</p>
-                    <ul>
-                        <li>Unlimited Projects</li>
-                        <li>24/7 Support</li>
-                        <li>1 TB Storage</li>
-                        <li>Custom Integrations</li>
-                    </ul>
-                    <button onclick="alert('Ultimate Plan Selected')">Select Plan</button>
-                </div>
-
+        <div class="pricing-section">
+            <!-- Filter Buttons -->
+            <div class="filterbtn">
+                <button class="active" data-filter="webdev">Web Development</button>
+                <button data-filter="logo-design">Logo Design</button>
+                <button data-filter="ecommerce">E-Commerce</button>
+                <button data-filter="content-writing">Content Writing</button>
+                <button data-filter="videoediting">Video Editing</button>
             </div>
-            <button class="prevv" onclick="moveCarousel(-1)">&#10094;</button>
-            <button class="nextt" onclick="moveCarousel(1)">&#10095;</button>
-        </div>
+            
+        
+            <!-- Card Container -->
+            <div class="card-container">
+                <!-- Web Development Cards -->
+                <div class="pricing-card webdev">
+                    <div class="price">$199</div>
+                    <h3>Starter Plan</h3>
+                    <p class="description">Suitable for small startup</p>
+                    <ul class="pricing-detail">
+                        <li>5 Stock Photos</li>
+                        <li>5 Page Website</li>
+                        <li>3 Banner Design</li>
+                        <li>1 jQuery Slider Banner</li>
+                        <li>FREE Google Friendly Sitemap</li>
+                        <li>48 to 72 hours TAT</li>
+                        <li>100% Satisfaction Guarantee</li>
+                        <li>100% Unique Design Guarantee</li>
+                        <li>100% Money Back Guarantee</li>
+                        <li><strong>Mobile Responsive</strong> (Additional $50)</li>
+                    </ul>
+                    <button>Select Plan</button>
+                </div>
+                <div class="pricing-card webdev">
+                    <div class="price">$299</div>
+                    <h3>Advanced Plan</h3>
+                    <p class="description">For growing businesses</p>
+                    <ul class="pricing-detail">
+                        <li>10 Stock Photos</li>
+                        <li>10 Page Website</li>
+                        <li>5 Banner Design</li>
+                        <li>1 jQuery Slider Banner</li>
+                        <li>FREE Google Friendly Sitemap</li>
+                        <li>24 to 48 hours TAT</li>
+                        <li>100% Satisfaction Guarantee</li>
+                        <li>100% Unique Design Guarantee</li>
+                        <li>100% Money Back Guarantee</li>
+                        <li><strong>Mobile Responsive</strong> (Additional $50)</li>
+                    </ul>
+                    <button>Select Plan</button>
+                </div>
+                
+                <!-- Logo Design Cards -->
+                <div class="pricing-card logo-design">
+                    <div class="price">$99</div>
+                    <h3>Basic Logo</h3>
+                    <p class="description">Simple logo design</p>
+                    <ul class="pricing-detail">
+                        <li>2 Logo Concepts</li>
+                        <li>1 Revision</li>
+                        <li>High-Resolution Files</li>
+                        <li>24-48 Hours Delivery</li>
+                    </ul>
+                    <button>Select Plan</button>
+                </div>
+                <div class="pricing-card logo-design">
+                    <div class="price">$199</div>
+                    <h3>Pro Logo</h3>
+                    <p class="description">Premium logo design</p>
+                    <ul class="pricing-detail">
+                        <li>5 Logo Concepts</li>
+                        <li>3 Revisions</li>
+                        <li>High-Resolution Files</li>
+                        <li>24-48 Hours Delivery</li>
+                        <li>Brand Guidelines</li>
+                    </ul>
+                    <button>Select Plan</button>
+                </div>
+                
+                <!-- E-Commerce Cards -->
+                <div class="pricing-card ecommerce">
+                    <div class="price">$499</div>
+                    <h3>E-Commerce Basic</h3>
+                    <p class="description">Basic e-commerce store setup</p>
+                    <ul class="pricing-detail">
+                        <li>5 Product Pages</li>
+                        <li>Payment Gateway Integration</li>
+                        <li>Shopping Cart</li>
+                        <li>Product Gallery</li>
+                    </ul>
+                    <button>Select Plan</button>
+                </div>
+                <div class="pricing-card ecommerce">
+                    <div class="price">$799</div>
+                    <h3>E-Commerce Pro</h3>
+                    <p class="description">Advanced e-commerce store setup</p>
+                    <ul class="pricing-detail">
+                        <li>Unlimited Product Pages</li>
+                        <li>Payment Gateway Integration</li>
+                        <li>Shopping Cart</li>
+                        <li>Product Gallery</li>
+                        <li>SEO Optimized</li>
+                        <li>Custom Branding</li>
+                    </ul>
+                    <button>Select Plan</button>
+                </div>
+                
+                <!-- Content Writing Cards -->
+                <div class="pricing-card content-writing">
+                    <div class="price">$199</div>
+                    <h3>Blog Writing</h3>
+                    <p class="description">Professional blog writing service</p>
+                    <ul class="pricing-detail">
+                        <li>Up to 500 Words</li>
+                        <li>SEO Friendly</li>
+                        <li>High Quality Content</li>
+                    </ul>
+                    <button>Select Plan</button>
+                </div>
+                <div class="pricing-card content-writing">
+                    <div class="price">$499</div>
+                    <h3>Website Copywriting</h3>
+                    <p class="description">Custom web copywriting services</p>
+                    <ul class="pricing-detail">
+                        <li>Up to 2000 Words</li>
+                        <li>SEO Optimized</li>
+                        <li>Professional Content</li>
+                    </ul>
+                    <button>Select Plan</button>
+                </div>
+                
+                <!-- Video Editing Cards -->
+                <div class="pricing-card videoediting">
+                    <div class="price">$199</div>
+                    <h3>Basic Editing</h3>
+                    <p class="description">Basic video editing service</p>
+                    <ul class="pricing-detail">
+                        <li>Up to 5 Minutes</li>
+                        <li>Color Correction</li>
+                        <li>Basic Transitions</li>
+                        <li>Audio Enhancements</li>
+                    </ul>
+                    <button>Select Plan</button>
+                </div>
+                <div class="pricing-card videoediting">
+                    <div class="price">$399</div>
+                    <h3>Pro Editing</h3>
+                    <p class="description">Advanced video editing service</p>
+                    <ul class="pricing-detail">
+                        <li>Up to 10 Minutes</li>
+                        <li>Advanced Color Grading</li>
+                        <li>Custom Transitions</li>
+                        <li>Sound Design</li>
+                    </ul>
+                    <button>Select Plan</button>
+                </div>
+            </div>
+        </div> 
     </section>
+
 
 
     <!-- Our Clients Section -->
