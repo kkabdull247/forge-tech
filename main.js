@@ -1,56 +1,38 @@
-// pricing carsoule 
-let currentIndex = 0;
-    
-function moveCarousel(direction) {
-    const wrapper = document.querySelector('.carousel-wrapper');
-    const totalCards = document.querySelectorAll('.pricing-card').length;
-    const cardWidth = document.querySelector('.pricing-card').offsetWidth;
-    const gap = 20; // Space between cards
+// pricing 
 
-    // Calculate the new index
-    currentIndex += direction;
+// Handle filter button functionality
+const filterButtons = document.querySelectorAll('.filterbtn button');
+const allCards = document.querySelectorAll('.pricing-card');
 
-    // Loop through the carousel
-    if (currentIndex < 0) {
-        currentIndex = totalCards - 1;
-    } else if (currentIndex >= totalCards) {
-        currentIndex = 0;
-    }
-
-    // Move the carousel
-    wrapper.style.transform = `translateX(-${(cardWidth + gap) * currentIndex}px)`;
+// Function to show cards based on the selected filter
+const showCards = (filterValue) => {
+    allCards.forEach(card => {
+        // Show cards based on the selected category
+        if (card.classList.contains(filterValue)) {
+            card.style.display = 'block';
+            setTimeout(() => {
+                card.style.opacity = '1';
+            }, 100);
+        } else {
+            card.style.display = 'none';
+        }
+    });
 }
 
-// Optional: Add drag-to-scroll functionality
-const carousel = document.querySelector('.carousel-containerr');
-let isDown = false;
-let startX;
-let scrollLeft;
+// Initial state based on the active button (or default to 'webdev' if none selected)
+const initialFilter = document.querySelector('.filterbtn button.active')?.getAttribute('data-filter') || 'webdev';
+showCards(initialFilter); // Show cards for the initial filter
 
-carousel.addEventListener('mousedown', (e) => {
-    isDown = true;
-    startX = e.pageX - carousel.offsetLeft;
-    scrollLeft = carousel.scrollLeft;
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Remove active class from all buttons and add to the clicked button
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filterValue = button.getAttribute('data-filter');
+        showCards(filterValue); // Show cards based on the selected filter
+    });
 });
-
-carousel.addEventListener('mouseleave', () => {
-    isDown = false;
-});
-
-carousel.addEventListener('mouseup', () => {
-    isDown = false;
-});
-
-carousel.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - carousel.offsetLeft;
-    const walk = (x - startX) * 3; // Adjust scroll speed
-    carousel.scrollLeft = scrollLeft - walk;
-});
-
-// end pricing
-
 
  // GSAP Animations for Sections
  gsap.to(".hero-section h1", { opacity: 1, y: 0, duration: 1, delay: 0.5 });
