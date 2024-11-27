@@ -1020,21 +1020,18 @@ border-radius: 10px;
 }
 
 /* pricing section */
+.pricing-sectionn {
+    padding: 45px 0;
+}
 
 .pricing-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 50px 0 !important;
     position: relative;
     height: 100%;
-}
-
-.pricing-row .col {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
 }
 
 .filterbtn {
@@ -1042,6 +1039,9 @@ border-radius: 10px;
     justify-content: center;
     align-items: center;
     gap: 1em;
+    margin-bottom: 20px;
+    margin-top: 0px;
+
 }
 
 .filterbtn button {
@@ -1051,11 +1051,23 @@ border-radius: 10px;
     background-color: #111212;
     color: #fff;
     border-radius: 5px;
+    transition: ease 0.3s;
 }
 
+.filterbtn button:hover{
+
+background-color: #000;
+color: white;
+transform: translateY(1px);
+box-shadow: 0 8px 16px #66faf03d;
+
+}
+
+
 .filterbtn .active {
-    background-color: #66faf0;
-    color: #111;
+    background-color: #66faf0 !important;
+    color: #111 !important;
+    border: none;
 }
 
 @media (max-width: 770px) {
@@ -1065,118 +1077,80 @@ border-radius: 10px;
     }
 }
 
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .pricing-card {
-    background-color: #111212;
+    background-color: rgb(0, 0, 0);
     border-radius: 8px;
+    padding: 30px;
+    margin: 15px;
+    width: 300px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 400px;
-    margin: 0 15px;
-    flex-shrink: 0;
-    width:300px;
+    justify-content: space-between; /* Ensures elements are spaced evenly */
+    align-items: center;
+    height: 400px; /* Same height for all cards */
     overflow: hidden;
     user-select: none;
     color: #fff;
-    transition: 0.6s ease;
-}
-
-.pricing-card:hover {
-    background-color: #66faf0;
-    color: #111212 !important;
-}
-
-.pricing-card .price {
-    font-size: 3rem;
-    color: #66faf0;
-    text-align: left;
-    border-bottom: 2px solid #fff;
-    padding: 5px 0px;
-    font-weight: bold;
-    font-style: italic;
-}
-
-.pricing-card:hover .price {
-    color: #111212;
-    border-bottom: 2px solid #111212;
+    text-align: center;
 }
 
 .pricing-card h3 {
-    margin: 0;
+    margin-top: 10px;
+    border-bottom: 2px solid #66faf0; /* Added border bottom */
+    padding-bottom: 10px;
     font-size: 1.5rem;
-    margin-top: 0.5em;
     font-weight: bold;
-    font-style: italic;
-
+    color: #fff;
 }
 
-.pricing-card p.description {
-    font-size: 0.9rem;
-    border-bottom: 2px solid #fff;
-    padding-bottom: 0.8em;
+.pricing-card .price {
+    font-size: 2rem;
+    color: #66faf0;
+    font-weight: bold;
 }
 
-.pricing-card:hover p.description {
-    border-bottom: 2px solid #111212;
+.pricing-card .description {
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 0;
 }
 
+.pricing-detail {
+    padding: 5px;
+}
 
-
-.pricing-card ul {
+.pricing-card .pricing-detail {
+    list-style: none;
+    font-size: 0.8rem;
+    color: #fff;
     padding: 0;
-    height: 100%;
-    overflow-y: scroll;
+    /* margin: 8px 0; */
+    height: 100px; /* Fixed height for the list */
+    overflow-y: auto; /* Allows scrolling when content overflows */
+    flex-grow: 1; /* Ensures the list area takes up remaining space */
 }
 
-.pricing-card ul::-webkit-scrollbar {
-    width: 5px;
+.pricing-card .pricing-detail li {
+    margin-bottom: 8px;
 }
 
-/* Handle */
-.pricing-card ul::-webkit-scrollbar-thumb {
+.pricing-card .pricing-detail::-webkit-scrollbar {
+    width: 3px;
+}
+
+.pricing-card .pricing-detail::-webkit-scrollbar-thumb {
     background: #66faf0;
     border-radius: 10px;
-}
-
-.pricing-card:hover ul::-webkit-scrollbar-thumb {
-    background-color: #111212;
-    /* Changes the thumb color when hovering over the card */
-}
-
-
-.pricing-card ul li {
-    font-size: 0.9rem;
-    /* color: #fff; */
-    margin: 8px 0;
-    display: flex;
-    align-items: left;
-    justify-content: left;
-    list-style: none;
-
-}
-
-
-
-.pricing-card ul li::before {
-    content: "";
-    color: #28a745;
-    background-color: #66faf0;
-    height: 12px;
-    width: 12px;
-    border-radius: 45px;
-    margin-right: 8px;
-    margin-left: 6px;
-    margin-top: 5px;
-    box-shadow: 0 0 10px rgba(102, 250, 240, 1);
-    border: 3px solid #fff;
-}
-
-.pricing-card:hover ul li::before {
-    /* box-shadow: 0 0 10px rgba(102, 250, 240, 1); */
-    border: 3px solid #111212;
 }
 
 .pricing-card button {
@@ -1184,68 +1158,53 @@ border-radius: 10px;
     color: #111212;
     border: none;
     padding: 10px 20px;
-    border-radius: 4px;
+    margin-top: 10px;
+    border-radius: 45px;
     cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
+    font-weight: bold;
+    font-size: 0.8rem;
+    transition: ease-in-out 0.2s;
+    margin-top: auto; /* Ensures button stays at the bottom */
 }
 
-.pricing-card:hover button {
-    background-color: #111212;
-    /* Changes the button background color */
-    color: white;
-    /* Optional: changes button text color */
-}
-
-.slick-slide {
-    padding: 0 10px;
-}
-
-.prevv,
-.nextt {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+.pricing-card button:hover{
     background: transparent;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 4px;
+    border: 2px solid white;
+    color: #66faf0;
+
+} 
+
+
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px #66faf03d;
 }
 
-.prevv {
-    left: 1%;
-
-}
-
-.nextt {
-    right: 1%;
-}
-
-.carousel-control-prev:hover{
-background-color: #00000079;
-}
-
-.carousel-control-next:hover{
-    background-color: #00000079;
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-    
+}
 
+.pricing-card {
+    animation: fadeIn 0.5s ease forwards;
+}
 
-/* Responsive design */
 @media (max-width: 768px) {
     .pricing-card {
         width: 100%;
     }
-}
 
-@media (max-width: 480px) {
-    .pricing-card {
-        width: 300px;
+    .filterbtn button {
+        padding: 8px 16px;
+        font-size: 14px;
     }
 }
 
+
+/* end */
 
 
 #contact {
