@@ -34,6 +34,59 @@ filterButtons.forEach(button => {
     });
 });
 
+// let currentIndex = 0;
+    
+// function moveCarousel(direction) {
+//     const wrapper = document.querySelector('.carousel-wrapper');
+//     const totalCards = document.querySelectorAll('.pricing-card').length;
+//     const cardWidth = document.querySelector('.pricing-card').offsetWidth;
+//     const gap = 20; // Space between cards
+
+//     // Calculate the new index
+//     currentIndex += direction;
+
+//     // Loop through the carousel
+//     if (currentIndex < 0) {
+//         currentIndex = totalCards - 1;
+//     } else if (currentIndex >= totalCards) {
+//         currentIndex = 0;
+//     }
+
+//     // Move the carousel
+//     wrapper.style.transform = `translateX(-${(cardWidth + gap) * currentIndex}px)`;
+// }
+
+// // Optional: Add drag-to-scroll functionality
+// const carousel = document.querySelector('.carousel-containerr');
+// let isDown = false;
+// let startX;
+// let scrollLeft;
+
+// carousel.addEventListener('mousedown', (e) => {
+//     isDown = true;
+//     startX = e.pageX - carousel.offsetLeft;
+//     scrollLeft = carousel.scrollLeft;
+// });
+
+// carousel.addEventListener('mouseleave', () => {
+//     isDown = false;
+// });
+
+// carousel.addEventListener('mouseup', () => {
+//     isDown = false;
+// });
+
+// carousel.addEventListener('mousemove', (e) => {
+//     if (!isDown) return;
+//     e.preventDefault();
+//     const x = e.pageX - carousel.offsetLeft;
+//     const walk = (x - startX) * 3; // Adjust scroll speed
+//     carousel.scrollLeft = scrollLeft - walk;
+// });
+
+// end pricing
+
+
  // GSAP Animations for Sections
  gsap.to(".hero-section h1", { opacity: 1, y: 0, duration: 1, delay: 0.5 });
  gsap.to(".about-section", { opacity: 1, y: 0, duration: 1, delay: 1 });
@@ -61,7 +114,9 @@ filterButtons.forEach(button => {
     });
 });
 
-  // Add 'scrolled' class to body after scrolling past the hero section
+ 
+
+        // Add 'scrolled' class to body after scrolling past the hero section
         window.addEventListener('scroll', () => {
             const heroHeight = document.getElementById('hero').offsetHeight;
             if (window.scrollY > heroHeight) {
@@ -70,39 +125,6 @@ filterButtons.forEach(button => {
                 document.body.classList.remove('scrolled');
             }
         });
-
-
-$(document).ready(function () {
-let slideIndex = 0;
-
-function moveSlide(step) {
-const totalSlides = $('.carousel__item').length;
-slideIndex += step;
-
-if (slideIndex < 0) {
-  slideIndex = totalSlides - 1;
-} else if (slideIndex >= totalSlides) {
-  slideIndex = 0;
-}
-
-// Move the carousel
-$('.carousel__wrapper').css('transform', 'translateX(' + (-slideIndex * 100) + '%)');
-}
-
-// Next and Previous buttons
-$('.carousel__prev-btn').click(function () {
-moveSlide(-1);
-});
-
-$('.carousel__next-btn').click(function () {
-moveSlide(1);
-});
-
-// Auto-slide every 3 seconds
-setInterval(function () {
-moveSlide(1);
-}, 5000);
-});
 
 // loader
 setTimeout(() => {
@@ -119,7 +141,9 @@ setTimeout(() => {
     ease: 'power2.inOut'
   });
   
- //   mouse follower
+ 
+
+//   mouse follower
 
  // Select the elements
 const outerCircle = document.querySelector(".outer-circle");
@@ -208,6 +232,52 @@ outerCircle.addEventListener('click', () => {
   message.textContent = 'Click Me!';
   message.classList.add('visible');
 });
+
+
+
+
+
+
+
+  
+// carousel hero
+
+// $(document).ready(function () {
+// let slideIndex = 0;
+
+// function moveSlide(step) {
+// const totalSlides = $('.carousel__item').length;
+// slideIndex += step;
+
+// if (slideIndex < 0) {
+//   slideIndex = totalSlides - 1;
+// } else if (slideIndex >= totalSlides) {
+//   slideIndex = 0;
+// }
+
+// // Move the carousel
+// $('.carousel__wrapper').css('transform', 'translateX(' + (-slideIndex * 100) + '%)');
+// }
+
+// // Next and Previous buttons
+// $('.carousel__prev-btn').click(function () {
+// moveSlide(-1);
+// });
+
+// $('.carousel__next-btn').click(function () {
+// moveSlide(1);
+// });
+
+// // Auto-slide every 3 seconds
+// setInterval(function () {
+// moveSlide(1);
+// }, 5000);
+// });
+
+
+
+
+
 
 
 
