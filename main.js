@@ -116,6 +116,7 @@ filterButtons.forEach(button => {
 
  
 
+     
         // Add 'scrolled' class to body after scrolling past the hero section
         window.addEventListener('scroll', () => {
             const heroHeight = document.getElementById('hero').offsetHeight;
