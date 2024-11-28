@@ -1,51 +1,125 @@
 // clock
- // Function to detect user's timezone using the browser's locale
- function getUserTimezone() {
-    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    return timeZone;
-}
 
-// Function to update the clock based on the given time zone
-function updateClock(timeZone) {
-    const now = new Date();
+// List of countries and their corresponding time zones
+        const countryToTimezone = [
+            { country: "Afghanistan", timeZone: "Asia/Kabul" },
+            { country: "Albania", timeZone: "Europe/Tirane" },
+            { country: "Algeria", timeZone: "Africa/Algiers" },
+            { country: "Andorra", timeZone: "Europe/Andorra" },
+            { country: "Angola", timeZone: "Africa/Luanda" },
+            { country: "Antigua and Barbuda", timeZone: "America/Antigua" },
+            { country: "Argentina", timeZone: "America/Argentina/Buenos_Aires" },
+            { country: "Armenia", timeZone: "Asia/Yerevan" },
+            { country: "Australia", timeZone: "Australia/Sydney" },
+            { country: "Austria", timeZone: "Europe/Vienna" },
+            { country: "Azerbaijan", timeZone: "Asia/Baku" },
+            { country: "Bahamas", timeZone: "America/Nassau" },
+            { country: "Bahrain", timeZone: "Asia/Bahrain" },
+            { country: "Bangladesh", timeZone: "Asia/Dhaka" },
+            { country: "Barbados", timeZone: "America/Barbados" },
+            { country: "Belarus", timeZone: "Europe/Minsk" },
+            { country: "Belgium", timeZone: "Europe/Brussels" },
+            { country: "Belize", timeZone: "America/Belize" },
+            { country: "Benin", timeZone: "Africa/Porto-Novo" },
+            { country: "Bhutan", timeZone: "Asia/Thimphu" },
+            { country: "Bolivia", timeZone: "America/La_Paz" },
+            { country: "Bosnia and Herzegovina", timeZone: "Europe/Sarajevo" },
+            { country: "Botswana", timeZone: "Africa/Gaborone" },
+            { country: "Brazil", timeZone: "America/Sao_Paulo" },
+            { country: "Brunei", timeZone: "Asia/Brunei" },
+            { country: "Bulgaria", timeZone: "Europe/Sofia" },
+            { country: "Burkina Faso", timeZone: "Africa/Ouagadougou" },
+            { country: "Burundi", timeZone: "Africa/Bujumbura" },
+            { country: "Cabo Verde", timeZone: "Atlantic/Cape_Verde" },
+            { country: "Cambodia", timeZone: "Asia/Phnom_Penh" },
+            { country: "Cameroon", timeZone: "Africa/Douala" },
+            { country: "Canada", timeZone: "America/Toronto" },
+            { country: "China", timeZone: "Asia/Shanghai" },
+            { country: "Pakistan", timeZone: "Asia/Karachi" },
+            { country: "Saudi Arabia", timeZone: "Asia/Riyadh" },
+            { country: "United States", timeZone: "America/New_York" },
+            { country: "United Kingdom", timeZone: "Europe/London" },
+            { country: "Japan", timeZone: "Asia/Tokyo" },
+            { country: "India", timeZone: "Asia/Kolkata" },
+            { country: "France", timeZone: "Europe/Paris" },
+            { country: "Germany", timeZone: "Europe/Berlin" },
+            { country: "Italy", timeZone: "Europe/Rome" },
+            { country: "Mexico", timeZone: "America/Mexico_City" },
+            { country: "Russia", timeZone: "Europe/Moscow" },
+            { country: "South Africa", timeZone: "Africa/Johannesburg" },
+            { country: "South Korea", timeZone: "Asia/Seoul" },
+            { country: "Turkey", timeZone: "Europe/Istanbul" },
+            { country: "Ukraine", timeZone: "Europe/Kiev" },
+            { country: "Vietnam", timeZone: "Asia/Ho_Chi_Minh" },
+            { country: "United Arab Emirates", timeZone: "Asia/Dubai" },
 
-    // Get the current time and format it based on the given time zone
-    const time = now.toLocaleString('en-US', { 
-        hour: '2-digit', 
-        minute: '2-digit', 
-        second: '2-digit', 
-        hour12: true, 
-        timeZone: timeZone 
-    });
+            // Continue to add more countries as needed
+        ];
 
-    // Format the current date
-    const formattedDate = now.toLocaleDateString('en-US', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    });
+        // Function to detect user's timezone using the browser's locale
+        function getUserTimezone() {
+            return Intl.DateTimeFormat().resolvedOptions().timeZone;
+        }
 
-    // Update the clock and date display
-    document.getElementById('clock').textContent = time;
-    document.getElementById('date').textContent = formattedDate;
-}
+        // Function to populate the dropdown with countries
+        function populateCountryDropdown() {
+            const select = document.getElementById('country-select');
+            for (const { country, timeZone } of countryToTimezone) {
+                const option = document.createElement('option');
+                option.value = timeZone;
+                option.textContent = country;
+                select.appendChild(option);
+            }
+        }
 
-// Get the user's geolocation-based timezone on page load
-let userTimezone = getUserTimezone();
-updateClock(userTimezone);  // Display user's time zone
+        // Function to update the clock based on the given time zone
+        function updateClock(timeZone) {
+            const now = new Date();
 
-// Event listener for country dropdown change
-document.getElementById('country-select').addEventListener('change', function() {
-    const selectedTimezone = this.value;
-    userTimezone = selectedTimezone; // Update userTimezone with the selected option
-    updateClock(selectedTimezone);  // Update time based on selected country
-});
+            // Get the current time and format it based on the given time zone
+            const time = now.toLocaleString('en-US', {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true,
+                timeZone: timeZone
+            });
 
-// Update the clock every second
-setInterval(() => updateClock(userTimezone), 1000);
+            // Format the current date
+            const formattedDate = now.toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                timeZone: timeZone
+            });
 
+            // Update the clock and date display
+            document.getElementById('clock').textContent = time;
+            document.getElementById('date').textContent = formattedDate;
+        }
 
+        // Initialize the dropdown and clock
+        window.onload = () => {
+            populateCountryDropdown();
+
+            // Detect user's timezone and set it as the selected option
+            const userTimezone = getUserTimezone();
+            const countrySelect = document.getElementById('country-select');
+            countrySelect.value = userTimezone;
+
+            // Update the clock initially
+            updateClock(userTimezone);
+
+            // Event listener for country dropdown change
+            countrySelect.addEventListener('change', function () {
+                const selectedTimezone = this.value;
+                updateClock(selectedTimezone); // Update time based on selected country
+            });
+
+            // Update the clock every second
+            setInterval(() => updateClock(countrySelect.value), 1000);
+        };
 
 // ---------------------------------------------------
 
