@@ -1465,6 +1465,12 @@ button:hover {
     z-index: 100;
 
 }
+
+/* Show button after hero section */
+body.scrolled .scroll-btn {
+    display: flex;
+}
+
 /* loader */
 
 
