@@ -1052,6 +1052,107 @@ border-radius: 10px;
     opacity: 0;
     transform: translateY(50px);
 }
+.counter-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 50px 10%;
+    padding-bottom: 0% !important;
+    text-align: center;
+    justify-items: center;
+}
+
+.counter {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: black;
+    /* Dark counter background */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    border-right: 5px solid #66faf0 !important;
+    /* Right border for separation */
+    /* border: 2px solid white; */
+    /* Right border for separation */
+    transition: transform 0.2s ease;
+}
+
+/* .counter:last-child {
+    border-right: none;
+} */
+
+.counter:hover {
+
+    transform: scale(1.05);
+}
+
+.counter:hover {
+    color: #FFD700 !important;
+    transform: skewY(-7deg) !important;
+}
+
+
+.counter-value {
+    font-size: 2rem;
+    margin-top: 5px;
+    font-weight: bold;
+    color: #66faf0;
+    /* Counter text color */
+}
+
+.label {
+    font-size: 1.1rem;
+    color: #ffffff;
+    /* Label text color */
+    margin-top: 10px;
+}
+
+.counter i {
+    font-size: 2rem;
+    color: #ffffff;
+    /* Icon color */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .counter-section {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 50px 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .counter-section {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 50px 5%;
+    }
+
+    .counter {
+        width: 100%;
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .counter-section {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0% !important;
+    }
+
+    .counter-value {
+        font-size: 1.5rem;
+        /* Smaller font size for smaller screens */
+    }
+
+    .counter i {
+        font-size: 2rem;
+        /* Smaller icons for mobile */
+    }
+}
 
 
 .carousel-containerr {
