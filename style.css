@@ -13,8 +13,9 @@
 } */
 
 body {
-    background-color: #0b0c10 !important;
-    color: #fff !important;
+     background-image: linear-gradient(90deg,#66faf0,black);
+    /* background-color: gray !important; */
+    color: #000000 !important;
     line-height: 1.6;
     overflow-x: hidden !important;
 
@@ -277,9 +278,10 @@ margin-top: 10px;
 }
 /* Dark Mode */
 .dark-mode {
-    background-image: linear-gradient(90deg,#66faf0,black);
+    background-image: none !important;
     /* background-color: gray !important; */
-    color: #000000 !important;
+    background-color: #0b0c10 !important;
+    color: #fff !important;
 }
 
 .dark-mode-toggle{
