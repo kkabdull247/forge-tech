@@ -1,3 +1,57 @@
+// clock
+ // Function to detect user's timezone using the browser's locale
+ function getUserTimezone() {
+    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    return timeZone;
+}
+
+// Function to update the clock based on the given time zone
+function updateClock(timeZone) {
+    const now = new Date();
+
+    // Get the current time and format it based on the given time zone
+    const time = now.toLocaleString('en-US', { 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        second: '2-digit', 
+        hour12: true, 
+        timeZone: timeZone 
+    });
+
+    // Format the current date
+    const formattedDate = now.toLocaleDateString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+
+    // Update the clock and date display
+    document.getElementById('clock').textContent = time;
+    document.getElementById('date').textContent = formattedDate;
+}
+
+// Get the user's geolocation-based timezone on page load
+let userTimezone = getUserTimezone();
+updateClock(userTimezone);  // Display user's time zone
+
+// Event listener for country dropdown change
+document.getElementById('country-select').addEventListener('change', function() {
+    const selectedTimezone = this.value;
+    userTimezone = selectedTimezone; // Update userTimezone with the selected option
+    updateClock(selectedTimezone);  // Update time based on selected country
+});
+
+// Update the clock every second
+setInterval(() => updateClock(userTimezone), 1000);
+
+
+
+// ---------------------------------------------------
+
+
+
+
 // pricing 
 
 // Handle filter button functionality
