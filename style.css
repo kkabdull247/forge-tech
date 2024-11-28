@@ -382,6 +382,7 @@ border-radius: 10px;
     width: 500px;
     max-width: 100%;
     margin: 50px auto;
+    margin-top: 60px !important;
     display: inline-block;
   }
   
