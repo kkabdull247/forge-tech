@@ -144,7 +144,7 @@ backdrop-filter: blur( 4px );
 border-radius: 10px;
 /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
 margin-top: 10px;
-
+margin-left: 17px !important;
 }
 
 .header-icons {
