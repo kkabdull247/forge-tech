@@ -49,6 +49,51 @@ setInterval(() => updateClock(userTimezone), 1000);
 
 // ---------------------------------------------------
 
+// counter for testimonials
+
+ // Counter animation when the section comes into view
+ document.addEventListener('DOMContentLoaded', function () {
+    const counters = document.querySelectorAll('.counter-value');
+    const speed = 50; // Increased speed for faster animation
+
+    // Function to animate the counter
+    const countUp = (element) => {
+        const target = +element.getAttribute('data-target');
+        const increment = target / speed;
+        let current = 0;
+
+        const updateCounter = () => {
+            current += increment;
+            if (current >= target) {
+                element.textContent = `+${target.toLocaleString()}`;
+            } else {
+                element.textContent = `+${Math.round(current).toLocaleString()}`;
+                requestAnimationFrame(updateCounter);
+            }
+        };
+
+        updateCounter();
+    };
+
+    // Intersection Observer to trigger animation when section comes into view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counterElement = entry.target;
+                countUp(counterElement);
+                observer.unobserve(counterElement); // Stop observing after animation starts
+            }
+        });
+    }, { threshold: 0.5 });
+
+    // Observe each counter value element
+    counters.forEach(counter => {
+        observer.observe(counter);
+    });
+});
+
+
+
 
 
 
