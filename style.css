@@ -1606,10 +1606,11 @@ button {
     font-size: 1rem;
 }
 
-button:hover {
-    background-color: #0277bd;
-}
+/* testimonials-section-button */
 
+button:hover {
+    background-color: #41444600;
+}
 
 /* Scroll Button */
 .scroll-btn {
