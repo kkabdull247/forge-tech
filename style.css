@@ -836,6 +836,8 @@ border-radius: 10px;
 /* Unique Fade-In with Bounce for About Section */
 .about-section {
     animation: bounceInUp 1s ease-out forwards 4s;
+        box-shadow: none !important;
+
   }
   
   @keyframes bounceInUp {
