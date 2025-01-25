@@ -1211,7 +1211,7 @@ border-radius: 10px;
     }
 
     .carousel-control-next,.carousel-control-prev {
-        top: 70% !important;
+        top: 25% !important;
         height: fit-content;
         padding: 5px;
     }
