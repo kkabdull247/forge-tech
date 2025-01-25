@@ -381,3 +381,43 @@ outerCircle.addEventListener('click', () => {
   message.textContent = 'Click Me!';
   message.classList.add('visible');
 });
+
+
+// Technologies section marquee
+
+const marquee = document.getElementById('marquee');
+
+let isDragging = false;
+let startX;
+let scrollLeft;
+
+marquee.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  startX = e.pageX;
+  scrollLeft = marquee.scrollLeft;
+  marquee.style.cursor = 'grabbing';
+  marquee.style.animationPlayState = 'paused';
+});
+
+marquee.addEventListener('mouseleave', () => {
+  isDragging = false;
+  marquee.style.cursor = 'grab';
+  marquee.style.animationPlayState = 'running';
+});
+
+marquee.addEventListener('mouseup', () => {
+  isDragging = false;
+  marquee.style.cursor = 'grab';
+  marquee.style.animationPlayState = 'running';
+});
+
+marquee.addEventListener('mousemove', (e) => {
+  if (!isDragging) return;
+  e.preventDefault();
+  const x = e.pageX;
+  const walk = (x - startX) * 1.5; // Adjust scrolling speed
+  marquee.scrollLeft = scrollLeft - walk;
+});
+
+
+
