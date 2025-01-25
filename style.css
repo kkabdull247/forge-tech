@@ -1805,3 +1805,99 @@ body.scrolled .scroll-btn {
   }
 
 
+  /* technologies section */
+
+  .marquee-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    overflow: hidden;
+    position: relative;
+    /* background-color: #ffffff; */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.308);
+    margin: 70px 0px;
+    /* background-image:url(./assets/8b1ad04a-4827-4a45-bafe-4e7f2e1bc32a.jpg);
+    background-size: cover; */
+  }
+
+  .marquee {
+    display: flex;
+    gap: 50px;
+    white-space: nowrap;
+    will-change: transform;
+    animation: scroll 30s linear infinite; /* Continuous scrolling */
+    cursor: grab;
+  }
+
+  .marquee:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .icon-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .marquee-icons {
+    font-size: 7rem;
+    color: #fffefecc;
+    user-select: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .marquee-icons:hover {
+    transform: scale(1.2);
+    color: #66faf0;
+  }
+
+  .lang-name {
+    font-size: 1.2rem;
+    color: #ffffffde;
+    font-weight: 600;
+    
+  }
+
+  @media screen and (max-width: 768px) {
+    .marquee-icons {
+      font-size: 2.5rem;
+    }
+
+    .lang-name {
+      font-size: 1rem;
+    }
+    .marquee-icons:hover {
+      transform: scale(1.2);
+      color: #66faf0;
+    }
+  
+  }
+
+  @media screen and (max-width: 480px) {
+    .marquee {
+      gap: 30px;
+    }
+
+    .marquee-icons {
+      font-size: 2rem;
+    }
+
+    .lang-name {
+      font-size: 0.9rem;
+    }
+    .marquee-icons:hover {
+      transform: scale(1.2);
+      color: #66faf0;
+    }
+  
+  }
