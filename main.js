@@ -423,7 +423,7 @@ marquee.addEventListener('mousemove', (e) => {
 // whatsapp direct order
 
 function shareOnWhatsApp(productName, productPrice) {
-    const message = `You have selected this plan : ${productName} - Price: ${productPrice}`;
+    const message = `I have selected this plan : ${productName} - Price: ${productPrice}`;
     const whatsappURL = `https://wa.me/+923182271174?text=${encodeURIComponent(message)}`;
     window.open(whatsappURL, '_blank');
 }
