@@ -280,7 +280,7 @@ moveSlide(1);
 // loader
 setTimeout(() => {
     document.querySelector(".loader-container").style.display = "none";
-  }, 3000);
+  }, 2000);
   
   // loader gsap
   gsap.to('.box', {
