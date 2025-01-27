@@ -947,9 +947,9 @@ border-radius: 10px;
 .service-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
-    gap: 30px; /* Space between cards */
+    gap: 10px; /* Space between cards */
     padding: 20px;
-    max-width: 1200px; /* Center alignment and proper width */
+    max-width: 1300px; /* Center alignment and proper width */
     margin: 0 auto; /* Centering the grid on the page */
     box-sizing: border-box;
     justify-content: center;
@@ -959,7 +959,7 @@ border-radius: 10px;
 
 .service-card {
     position: relative;
-    height: 300px;
+    height: 250px;
     perspective: 1000px;
     cursor: pointer;
     overflow: hidden;
