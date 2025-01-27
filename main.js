@@ -428,3 +428,13 @@ function shareOnWhatsApp(productName, productPrice) {
     window.open(whatsappURL, '_blank');
 }
 
+ // Disable Right-Click
+ document.addEventListener("contextmenu", (e) => e.preventDefault());
+
+ // Disable F12, Ctrl+Shift+I, and Ctrl+U
+ document.addEventListener("keydown", (e) => {
+   if (e.keyCode === 123 || (e.ctrlKey && (e.shiftKey && e.keyCode === 73)) || (e.ctrlKey && e.keyCode === 85)) {
+     e.preventDefault();
+   }
+ });
+
