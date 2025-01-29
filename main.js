@@ -440,13 +440,11 @@ function shareOnWhatsApp(productName, productPrice) {
 
 // youtube video autoplay
 
- window.onload = function() {
-    var iframe = document.getElementById('video-frame');
-    var videoSrc = iframe.src;
-    
-    // Play video on page load by forcing autoplay
-    iframe.src = videoSrc + "&autoplay=1";  // Re-apply autoplay on load
-}
-
+ // Ensuring the video plays on page load by adding autoplay in the iframe's src
+    document.addEventListener('DOMContentLoaded', function () {
+        const video = document.getElementById('video');
+        // Make sure the video plays on page load
+        video.src += "&autoplay=1"; // Ensure autoplay is enabled
+    });
 
 
