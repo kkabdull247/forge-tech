@@ -438,3 +438,15 @@ function shareOnWhatsApp(productName, productPrice) {
    }
  });
 
+// youtube video autoplay
+
+ window.onload = function() {
+    var iframe = document.getElementById('video-frame');
+    var videoSrc = iframe.src;
+    
+    // Play video on page load by forcing autoplay
+    iframe.src = videoSrc + "&autoplay=1";  // Re-apply autoplay on load
+}
+
+
+
